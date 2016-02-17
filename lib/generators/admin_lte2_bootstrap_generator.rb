@@ -21,8 +21,8 @@ class AdminLte2BootstrapGenerator < Rails::Generators::Base
 
     def inject_stylesheets
       application_file_path = "app/assets/stylesheets/application.#{@stylesheet_extension}"
-      inject_into_file application_file_path, "@import \"AdminLTE/skins/skin-blue\";\n", after: ' */'
-      inject_into_file application_file_path, "@import \"AdminLTE/AdminLTE\";\n", after: ' */'
+      # inject_into_file application_file_path, "@import \"AdminLTE/skins/skin-blue\";\n", after: ' */'
+      # inject_into_file application_file_path, "@import \"AdminLTE/AdminLTE\";\n", after: ' */'
       inject_into_file application_file_path, "@import \"font-awesome\";\n", after: ' */'
       inject_into_file application_file_path, "@import \"ionicons\";\n", after: ' */'
       inject_into_file application_file_path, "@import \"bootstrap\";\n", after: ' */'
@@ -31,6 +31,8 @@ class AdminLte2BootstrapGenerator < Rails::Generators::Base
 
     def copy_templates
       @template_extension = "erb"
+      copy_file "adminlte.js", "app/assets/javascripts/adminlte.js"
+      copy_file "adminlte.#{@stylesheet_extension}", "app/assets/stylesheets/adminlte.#{@stylesheet_extension}"
       copy_file "#{@template_extension}/admin_lte2_bootstrap.html.#{@template_extension}", "app/views/layouts/admin_lte2_bootstrap.html.#{@template_extension}"
       directory "#{@template_extension}/admin_lte2_bootstrap", "app/views/layouts/admin_lte2_bootstrap"
     end
