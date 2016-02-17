@@ -26,9 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
     $ rails g admin_lte2_bootstrap
-```
 
 ## Development
 
