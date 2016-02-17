@@ -32,5 +32,6 @@ class AdminLte2BootstrapGenerator < Rails::Generators::Base
     def copy_templates
       @template_extension = "erb"
       copy_file "#{@template_extension}/admin_lte2_bootstrap.html.#{@template_extension}", "app/views/layouts/admin_lte2_bootstrap.html.#{@template_extension}"
+      directory "#{@template_extension}/admin_lte2_bootstrap", "app/views/layouts/admin_lte2_bootstrap"
     end
 end
